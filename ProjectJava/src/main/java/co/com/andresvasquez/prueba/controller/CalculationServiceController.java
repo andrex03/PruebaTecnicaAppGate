@@ -42,7 +42,9 @@ public class CalculationServiceController {
     }
 
     @PostMapping("/operatorion")
-    public String operator1(@RequestParam("op1") int op1, @RequestParam("op2") int op2, @RequestParam("operador") String operador, HttpServletRequest request,HttpSession session) throws GenericException {
+    public String operator1(@RequestParam("op1") int op1, @RequestParam("op2") int op2,
+                            @RequestParam("operador") String operador,
+                            HttpServletRequest request,HttpSession session) throws GenericException {
         log.info("----------Inicia nueva operacion----------");
         log.info("Id de Sesion: {},operacion: {}({},{})",session.getId(), operador,op1,op2);
         String result = calculateOperation.getResult(op1, op2, operador);
